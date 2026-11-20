@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grimm OS — a new light for old laptops</title>
+<meta name="description" content="Grimm OS is a free operating system for the laptop you already own. Built on Debian 13 and Linux, with a desktop, launcher and terminal of its own, and nothing running that you didn't ask for.">
+<meta name="theme-color" content="#0a0a0b">
+<meta property="og:title" content="Grimm OS — a new light for old laptops">
+<meta property="og:description" content="A free, Debian-based operating system with a desktop of its own. Made for 4 GB laptops.">
+<meta property="og:image" content="img/dark-desktop.webp">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link rel="stylesheet" href="https://fonts.bunny.net/css?family=instrument-serif:400,400i|inter-tight:400,500,600|jetbrains-mono:400,500&display=swap">
+<link rel="stylesheet" href="style.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <a class="mark" href="#top" aria-label="Grimm OS">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6H9l-4 4v6l4 4h10v-7h-7"/><path class="flare" d="M20.2 1.6l.55 1.55 1.55.55-1.55.55-.55 1.55-.55-1.55-1.55-.55 1.55-.55z"/></svg>
+    Grimm OS
+  </a>
+  <nav aria-label="Sections">
+    <a href="#desktop">Desktop</a><a href="#rune">Rune</a><a href="#spec">Under the hood</a><a href="#install">Install</a><a class="dl" href="#download">Download</a>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- I. The eclipse: scrolling opens the moon onto the desktop -->
+  <section class="eclipse" aria-label="Introduction">
+    <div class="stage">
+      <img class="sky" src="img/eclipse.webp" width="1800" height="1200" alt="" fetchpriority="high">
+      <div class="reveal-shot"><img src="img/dark-desktop.webp" width="1600" height="900" alt="The Grimm OS desktop: three floating islands for apps, the clock and status over an aurora photo, and a widget with the time and CPU, RAM and disk use"></div>
+      <div class="intro">
+        <p class="meta"><span class="flare-dot"></span>Version 0.8 · Debian 13 · Linux 6.12 · Free software</p>
+        <h1>A new light<br>for <em>old laptops.</em></h1>
+        <p class="lede">Grimm OS is a free operating system for the laptop you already own. Its desktop, launcher and terminal were made from scratch, it idles at about one percent of a CPU, and nothing runs that you didn't ask for.</p>
+        <p class="cta"><a class="btn" href="#download">Download</a><a class="link" href="#desktop">See it work <span aria-hidden="true">↓</span></a></p>
+      </div>
+      <p class="scroll-hint" aria-hidden="true">Scroll</p>
+    </div>
+  </section>
+
+  <!-- the idea, said plainly -->
+  <section class="thesis">
+    <p class="big">Most systems ask an old laptop to keep up. Grimm lets it <em>rest</em>. The desktop sleeps until you touch it, closed apps really close, and the look is spent where you see it: in motion when you act, and in stillness when you don't.</p>
+    <dl class="figures">
+      <div><dt>~1%</dt><dd>CPU with the desktop idle, measured</dd></div>
+      <div><dt>230 MB</dt><dd>for the whole desktop shell</dd></div>
+      <div><dt>4 GB</dt><dd>of RAM is plenty</dd></div>
+      <div><dt>0</dt><dd>ads, accounts or tracking</dd></div>
+    </dl>
+  </section>
+
+  <!-- chapters -->
+  <section id="desktop" class="chapter">
+    <header class="ch-head">
+      <span class="num">I</span>
+      <h2>The desktop</h2>
+      <p>No taskbar along the bottom, no dock on the side. Three islands float over your wallpaper and the rest of the screen belongs to your work.</p>
+    </header>
+    <figure class="plate">
+      <div class="annotated">
+        <img src="img/dark-desktop.webp" width="1600" height="900" loading="lazy" alt="The Grimm OS desktop with its three islands and the widget">
+        <i class="pin" style="--x:7.5%;--y:3%">1</i><i class="pin" style="--x:50%;--y:3%">2</i><i class="pin" style="--x:93%;--y:3%">3</i><i class="pin" style="--x:85%;--y:22%">4</i>
+      </div>
+      <figcaption>
+        <ol class="legend">
+          <li><b>Apps.</b> Your pinned apps and open windows, each with a glowing dot.</li>
+          <li><b>Clock.</b> Click it for the dashboard: Wi-Fi, sound, night light, notifications.</li>
+          <li><b>Status.</b> Network, battery and power, nothing more.</li>
+          <li><b>Widget.</b> Time, a line of your choosing and system gauges. It stops updating while a window covers it.</li>
+        </ol>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="chapter flip">
+    <header class="ch-head">
+      <span class="num">II</span>
+      <h2>The launcher is a command bar</h2>
+      <p>Press Super+Space and type. Open an app, jump to a setting, work out <code>2400*1.5%</code>, run <code>&gt; a command</code>, or search the web with <code>? a question</code>.</p>
+    </header>
+    <figure class="plate bleed"><img src="img/dark-launcher.webp" width="1600" height="900" loading="lazy" alt="The Grimm launcher with a search field, categories and an app grid"></figure>
+  </section>
+
+  <section class="chapter">
+    <header class="ch-head">
+      <span class="num">III</span>
+      <h2>One colour, everywhere</h2>
+      <p>Grimm takes a colour from your wallpaper and builds the whole palette from it: the desktop, window borders, notifications, apps and the terminal. Drag across to change the light.</p>
+    </header>
+    <figure class="plate">
+      <div class="compare" style="--cut:50%">
+        <img src="img/light-settings.webp" width="1600" height="900" loading="lazy" alt="Grimm Settings in light mode with the Lake wallpaper">
+        <div class="over"><img src="img/dark-settings.webp" width="1600" height="900" loading="lazy" alt="Grimm Settings in dark mode with the Aurora wallpaper"></div>
+        <span class="handle" aria-hidden="true"></span>
+        <input type="range" min="0" max="100" value="50" aria-label="Show more of the dark or the light theme">
+        <span class="tag l">Aurora · dark</span><span class="tag r">Lake · light</span>
+      </div>
+    </figure>
+  </section>
+
+  <section class="chapter flip">
+    <header class="ch-head">
+      <span class="num">IV</span>
+      <h2>Everything else, one click away</h2>
+      <p>Click the clock. Wi-Fi, Bluetooth, night light, Do Not Disturb and power modes are tiles; brightness is a slider; your notifications and a calendar sit underneath.</p>
+    </header>
+    <figure class="plate bleed"><img src="img/dark-dash.webp" width="1600" height="900" loading="lazy" alt="The Grimm dashboard with quick-settings tiles, a brightness slider, notifications and a calendar"></figure>
+  </section>
+
+  <section id="rune" class="chapter rune">
+    <header class="ch-head">
+      <span class="num">V</span>
+      <h2>Rune, the terminal</h2>
+      <p>Grimm's own terminal. Each tab shows its folder and git branch, a dot while a command runs and a tick or a cross when it finishes in the background. Split panes, search, and Super+` drops one down from the top. Commands you use often can be saved, even for a set number of runs.</p>
+    </header>
+    <div class="term" aria-label="Saving and running a command in Rune">
+      <div class="term-bar"><span class="tab on">grimm-os <em>main</em></span><span class="tab">server <em class="ok">✓</em></span></div>
+<pre><span class="dim">~/projects/grimm-os</span>  <span class="br">main</span>
+<span class="pr">❯</span> <span class="typed t1">,save "git pull --rebase" sync</span>
+<span class="out o1"><span class="pr">◆</span> Saved "sync": git pull --rebase  (unlimited uses)</span>
+<span class="out o1"> </span>
+<span class="out o1"><span class="dim">~/projects/grimm-os</span>  <span class="br">main</span></span>
+<span class="out o1"><span class="pr">❯</span> </span><span class="typed t2">,save "sudo apt upgrade" 1 update</span>
+<span class="out o2"><span class="pr">◆</span> Saved "update": sudo apt upgrade  (1 use)</span>
+<span class="out o2"> </span>
+<span class="out o2"><span class="dim">~/projects/grimm-os</span>  <span class="br">main</span></span>
+<span class="out o2"><span class="pr">❯</span> </span><span class="typed t3">,run sync</span>
+<span class="out o3"><span class="pr">◆</span> git pull --rebase</span>
+<span class="out o3">Already up to date.</span>
+<span class="out o3"><span class="ok">✓</span> <span class="dim">git pull --rebase · 2s</span></span></pre>
+    </div>
+  </section>
+
+  <!-- the spec sheet -->
+  <section id="spec" class="spec">
+    <header class="ch-head">
+      <span class="num">VI</span>
+      <h2>Under the hood</h2>
+      <p>Grimm stands on Debian, one of the oldest and steadiest Linux systems, so <code>apt</code> and its tens of thousands of packages just work. Everything you see on top is Grimm's.</p>
+    </header>
+    <table>
+      <tbody>
+        <tr><th>Base</th><td>Debian 13 “trixie”</td><td>security updates install by themselves</td></tr>
+        <tr><th>Kernel</th><td>Linux 6.12 LTS</td><td>with Wi-Fi, graphics and sound firmware</td></tr>
+        <tr><th>Display</th><td>X11 · Openbox · picom 12</td><td>rounded windows, shadows, spring motion</td></tr>
+        <tr><th>Shell</th><td>Python · GTK 3 · WebKitGTK</td><td>one process, event driven, no polling at rest</td></tr>
+        <tr><th>Terminal</th><td>Rune · VTE 2.91</td><td>one process for every window</td></tr>
+        <tr><th>Installer</th><td>Calamares</td><td>keeps its log; skips failing disks</td></tr>
+        <tr><th>Idle CPU</th><td>~1%</td><td>shell and renderer together, measured</td></tr>
+        <tr><th>Shell memory</th><td>~230 MB</td><td>proportional set size, measured</td></tr>
+        <tr><th>Image</th><td>~1.6 GB</td><td>64-bit x86 (amd64), live and installer in one</td></tr>
+        <tr><th>Licence</th><td>GPL-3.0-or-later</td><td>source on GitHub</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- made in the open -->
+  <section class="log">
+    <header class="ch-head">
+      <span class="num">VII</span>
+      <h2>Made in the open</h2>
+      <p>Every version, built, booted and tested on a 2016 laptop with 4 GB of memory.</p>
+    </header>
+    <ol class="versions">
+      <li><b>0.2</b><span>The baseline: islands, dock, launcher, dashboard and the built-in apps.</span></li>
+      <li><b>0.3</b><span>The launcher becomes a command bar. Web apps, Do Not Disturb, End task, quarter snapping.</span></li>
+      <li><b>0.4</b><span>A welcome screen, photo wallpapers, and Move in from your old computer.</span></li>
+      <li><b>0.5</b><span>First boot on real hardware.</span></li>
+      <li><b>0.7</b><span>“Corona”: one colour from your wallpaper styles everything; spring motion; installed for real.</span></li>
+      <li><b>0.8</b><span>Rune, Grimm's own terminal, saved commands, and apps that quit when you close them.</span></li>
+    </ol>
+  </section>
+
+  <!-- install -->
+  <section id="install" class="install">
+    <header class="ch-head">
+      <span class="num">VIII</span>
+      <h2>Install it</h2>
+      <p>About twenty minutes from download to desktop. You can try everything from the USB stick first without touching your disk.</p>
+    </header>
+    <ol class="steps">
+      <li><b>Download</b><span>the image (about 1.6 GB) and check its SHA-256 sum.</span></li>
+      <li><b>Write it to a USB stick</b><span>with balenaEtcher, or copy it onto a Ventoy stick.</span></li>
+      <li><b>Boot from the stick</b><span>and try Grimm live. Wi-Fi, sound and the desktop all work.</span></li>
+      <li><b>Click Install</b><span>on the desktop, answer a few questions, and restart.</span></li>
+    </ol>
+    <p class="reqs"><span>64-bit Intel or AMD</span><span>2 GB RAM · 4 GB recommended</span><span>20 GB disk · SSD feels best</span><span>Any graphics</span></p>
+  </section>
+
+  <section class="faq">
+    <header class="ch-head"><span class="num">IX</span><h2>Questions</h2></header>
+    <div class="qs">
+      <details><summary>Is it free?</summary><p>Yes. It costs nothing, and its source code is open under the GNU GPL, version 3 or later. No ads, no accounts, no tracking.</p></details>
+      <details><summary>Is it Linux?</summary><p>Yes: the Linux kernel and Debian 13 underneath, so anything packaged for Debian installs with <code>apt</code>. Everything on top, from the boot splash to the terminal, is Grimm.</p></details>
+      <details><summary>Will my Wi-Fi and sound work?</summary><p>Grimm ships Debian's drivers and the common Wi-Fi, graphics and sound firmware. The live USB lets you check before you install anything.</p></details>
+      <details><summary>Can I keep Windows?</summary><p>The installer can put Grimm next to another system or replace it. Back up your files first either way.</p></details>
+      <details><summary>Who makes it?</summary><p>Sanskar Tiwari, who goes by Grimm. Grimm OS is not affiliated with or endorsed by the Debian Project.</p></details>
+    </div>
+  </section>
+
+  <section id="download" class="download">
+    <img class="sky-small" src="img/eclipse.webp" width="1800" height="1200" alt="" loading="lazy">
+    <div class="ticket">
+      <h2>Grimm OS <em>0.8</em></h2>
+      <dl>
+        <div><dt>Image</dt><dd>grimm-os-0.8-amd64.iso</dd></div>
+        <div><dt>Size</dt><dd>~1.6 GB</dd></div>
+        <div><dt>Base</dt><dd>Debian 13 · Linux 6.12</dd></div>
+        <div><dt>SHA-256</dt><dd>published with the image</dd></div>
+      </dl>
+      <p class="cta"><span class="btn off" aria-disabled="true">Being prepared</span><a class="link" href="https://github.com/AtomiqTraders/Grimm-os">Source on GitHub <span aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>© 2026 Sanskar Tiwari (Grimm). Grimm OS is free software under the GNU GPL v3 or later. “Grimm OS”, “Rune” and the Grimm logo are trademarks of Sanskar Tiwari. Built on Debian and the Linux kernel; not affiliated with or endorsed by the Debian Project. Eclipse and aurora photographs: NASA, public domain. Screenshots show a demo account.</p>
+  <nav><a href="https://github.com/AtomiqTraders/Grimm-os">Source</a><a href="https://github.com/AtomiqTraders/Grimm-os/blob/main/LICENSE">Licence</a><a href="https://github.com/AtomiqTraders/Grimm-os/blob/main/TRADEMARKS.md">Trademarks</a></nav>
+</footer>
+</body>
+</html>
