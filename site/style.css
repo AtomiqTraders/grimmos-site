@@ -115,14 +115,93 @@ section:not(.eclipse) { padding: clamp(90px, 14vh, 170px) var(--gut) 0; max-widt
 .compare .tag { position: absolute; bottom: 16px; font: 400 12px var(--mono); padding: 6px 10px; background: rgba(10,10,11,.75); color: var(--bone); pointer-events: none; }
 .compare .tag.l { left: 16px; } .compare .tag.r { right: 16px; background: rgba(236,230,218,.85); color: var(--ink); }
 
-/* the living island: the three states, each on its own strip of night */
-.island-demo { display: grid; gap: 14px; max-width: 760px; }
-.island-demo figure { margin: 0; display: grid; grid-template-columns: minmax(0, 470px) minmax(0, 1fr); align-items: center; gap: 26px;
-  padding: 18px 22px; background: #020306; border: 1px solid var(--line); border-radius: 8px; }
-.island-demo img { width: auto; max-width: 100%; border-radius: 999px; }
-.island-demo figcaption { color: var(--ash); font-size: 15px; }
-.island-demo figcaption::before { content: "— "; color: var(--flare); }
-@media (max-width: 760px) { .island-demo figure { grid-template-columns: 1fr; gap: 12px; } }
+/* ---------- the idea, lit word by word as you scroll (main.js sets .lit) */
+.js .thesis .big .w { color: var(--smoke); transition: color .35s ease; }
+.js .thesis .big .w.lit { color: var(--bone); }
+.js .thesis .big em .w.lit { color: var(--corona); }
+
+/* ---------- a light that sweeps once across each screenshot as it arrives */
+.annotated, .compare, .plate.bleed { position: relative; }
+.annotated::after, .compare::after, .plate.bleed::after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+  background: linear-gradient(105deg, transparent 38%, rgba(241, 223, 184, .16) 50%, transparent 62%) no-repeat; background-size: 260% 100%; background-position: 130% 0; mix-blend-mode: screen; }
+.plate.bleed::after { border-radius: 8px 0 0 8px; } .flip .plate.bleed::after { border-radius: 0 8px 8px 0; }
+.in .annotated::after, .compare.in::after, .plate.bleed.in::after, .plate.in .compare::after { animation: sweep 1.6s var(--ease) .35s both; }
+@keyframes sweep { from { background-position: 130% 0; } to { background-position: -30% 0; } }
+
+/* the desktop's pins arrive one by one; a legend line under the mouse picks out its pin */
+.js .pin { opacity: 0; scale: .4; transition: opacity .4s var(--ease), scale .5s cubic-bezier(.3, 1.6, .5, 1), box-shadow .25s; }
+.js .in .pin { opacity: 1; scale: 1; }
+.in .pin:nth-of-type(1) { transition-delay: .35s; } .in .pin:nth-of-type(2) { transition-delay: .5s; }
+.in .pin:nth-of-type(3) { transition-delay: .65s; } .in .pin:nth-of-type(4) { transition-delay: .8s; }
+.annotated.focus .pin { opacity: .3; } .annotated.focus .pin.hl { opacity: 1; box-shadow: 0 0 0 8px rgba(255, 91, 74, .35); background: var(--flare); color: #fff; }
+.legend li { cursor: default; transition: color .2s; } .legend li:hover { color: var(--bone); }
+
+/* ---------- the launcher's command bar, typing for real */
+.cmdbar { max-width: 640px; margin: -10px 0 50px 110px; border-radius: 16px; background: #0c0f14; border: 1px solid var(--line2); overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .55), 0 0 0 6px rgba(236, 230, 218, .03); }
+.cb-in { display: flex; align-items: center; gap: 12px; padding: 16px 18px; font: 400 19px var(--sans); border-bottom: 1px solid var(--line); min-height: 60px; }
+.cb-in svg { width: 20px; height: 20px; fill: none; stroke: var(--ash); stroke-width: 2; stroke-linecap: round; flex: none; }
+.caret { width: 2px; height: 22px; background: var(--corona); animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.cb-out { display: flex; align-items: center; gap: 12px; padding: 13px 18px; font-size: 15.5px; min-height: 50px; background: rgba(236, 230, 218, .035);
+  transition: opacity .25s; }
+.cb-out.empty { opacity: 0; }
+.cb-kind { font: 400 11.5px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--ink); background: var(--corona); padding: 3px 8px; border-radius: 4px; }
+.cb-out kbd { margin-left: auto; font: 400 11.5px var(--mono); color: var(--ash); border: 1px solid var(--line2); border-radius: 5px; padding: 2px 7px; }
+
+/* ---------- the living island, as a working copy */
+.live { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 24px 50px; align-items: center; padding: 60px 50px; border-radius: 10px; border: 1px solid var(--line);
+  background: radial-gradient(70% 90% at 30% 100%, rgba(30, 110, 200, .32), transparent 60%), radial-gradient(60% 70% at 70% 0%, rgba(40, 160, 90, .22), transparent 60%), #03050a; }
+.li { justify-self: start; margin-left: clamp(0px, 8%, 80px); display: flex; align-items: center; height: 46px; padding: 0 6px; border-radius: 999px; overflow: hidden; white-space: nowrap; width: max-content;
+  background: linear-gradient(180deg, rgba(14, 22, 30, .92), rgba(10, 16, 24, .86)); border: 1px solid rgba(236, 230, 218, .12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 12px 40px rgba(0, 0, 0, .5); font-family: "Inter Tight", var(--sans); color: #e7ebf3; }
+.li > span { display: none; align-items: center; }
+.li-clock { gap: 10px; padding: 0 16px; font-variant-numeric: tabular-nums; }
+.li-clock b { font-size: 17px; font-weight: 600; } .li-clock span { font-size: 14.5px; color: #8d9ab0; }
+.li.s-clock .li-clock, .li.s-media .li-clock, .li.s-hover .li-clock { display: flex; }
+.li.s-media .li-media, .li.s-hover .li-media { display: flex; }
+.li.s-vol .li-osd, .li.s-charge .li-osd { display: flex; }
+.li-media { gap: 9px; padding-right: 2px; }
+.li-sep { width: 1px; height: 22px; background: rgba(236, 230, 218, .14); margin-right: 3px; }
+.li-art { width: 28px; height: 28px; border-radius: 8px; background: radial-gradient(circle at 50% 50%, #fff 0 3px, #8f3fb5 3.5px 8px, #2a1238 8.5px); flex: none; }
+.li-eq { display: flex; align-items: flex-end; gap: 2px; height: 14px; }
+.li-eq i { width: 3px; border-radius: 1px; background: #5fe0b6; height: 60%; animation: eq 1s ease-in-out infinite alternate; }
+.li-eq i:nth-child(2) { animation-delay: -.4s; } .li-eq i:nth-child(3) { animation-delay: -.7s; }
+@keyframes eq { from { height: 30%; } to { height: 100%; } }
+.li-text { display: flex; flex-direction: column; line-height: 1.15; } .li-text b { font-size: 14px; font-weight: 600; } .li-text span { font-size: 12px; color: #8d9ab0; }
+.li-btn { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; flex: none; }
+.li-btn svg { width: 15px; height: 15px; fill: currentColor; stroke: currentColor; stroke-width: 0; }
+.li-play { background: rgba(95, 224, 182, .18); color: #5fe0b6; } .li-play svg .pz { stroke-width: 3.2; fill: none; } .li-play svg .pl { display: none; }
+.li-side { width: 0; opacity: 0; transition: width .4s cubic-bezier(.3, 1.4, .5, 1), opacity .3s; overflow: hidden; color: #e7ebf3; }
+.li-side svg path { stroke-width: 2.2; }
+.li.s-hover .li-side { width: 32px; opacity: 1; }
+.li-osd { gap: 12px; padding: 0 18px; }
+.li-ic { width: 19px; height: 19px; fill: none; stroke: #e7ebf3; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.li-ic .bolt { display: none; } .li.s-charge .li-ic .vol { display: none; } .li.s-charge .li-ic .bolt { display: inline; stroke: #6ff0b6; }
+.li-bar { width: 170px; height: 7px; border-radius: 4px; background: rgba(236, 230, 218, .14); overflow: hidden; }
+.li-bar i { display: block; height: 100%; width: 40%; border-radius: 4px; background: linear-gradient(90deg, #5fe0b6, #2ec4b6); transition: width .5s cubic-bezier(.2, .8, .2, 1); }
+.li.s-charge .li-bar i { background: #6ff0b6; }
+.li-osd b { font-size: 14.5px; font-weight: 600; font-variant-numeric: tabular-nums; min-width: 44px; }
+.li-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font: 400 13px var(--mono); }
+.li-steps li { color: var(--smoke); padding: 6px 0 6px 18px; position: relative; transition: color .3s; cursor: pointer; }
+.li-steps li::before { content: ""; position: absolute; left: 0; top: 50%; width: 7px; height: 7px; margin-top: -3.5px; border-radius: 50%; border: 1px solid var(--smoke); transition: all .3s; }
+.li-steps li.on { color: var(--bone); } .li-steps li.on::before { background: var(--flare); border-color: var(--flare); box-shadow: 0 0 10px var(--flare); }
+.li-note { grid-column: 1 / -1; margin: 0; text-align: center; font-size: 13.5px; color: var(--ash); }
+
+/* ---------- the version history: a line of light that fills as you read */
+.versions { position: relative; padding-left: 34px !important; }
+.versions::before, .versions::after { content: ""; position: absolute; left: 6px; top: 0; width: 1px; }
+.versions::before { bottom: 0; background: var(--line2); }
+.versions::after { height: var(--fill, 0%); background: linear-gradient(var(--corona), var(--flare)); box-shadow: 0 0 10px var(--flare); }
+.versions li { position: relative; }
+.versions li::before { content: ""; position: absolute; left: -32px; top: 32px; width: 9px; height: 9px; border-radius: 50%; background: var(--ink); border: 1px solid var(--line2); transition: all .4s var(--ease); }
+.versions li.lit::before { background: var(--flare); border-color: var(--flare); box-shadow: 0 0 12px var(--flare); }
+.js .versions li b { color: var(--smoke); transition: color .4s; } .js .versions li.lit b { color: var(--bone); } .js .versions li.lit:last-child b { color: var(--corona); }
+
+/* ---------- the spec sheet: rows arrive in turn */
+.js .spec tr { opacity: 0; transform: translateX(-10px); transition: opacity .5s var(--ease), transform .5s var(--ease), background .2s; }
+.js .spec table.in tr { opacity: 1; transform: none; }
+@media (max-width: 760px) { .live { grid-template-columns: 1fr; padding: 40px 16px; } .li-bar { width: 110px; } .cmdbar { margin-left: 0; } }
 
 /* Rune */
 .rune { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 60px; align-items: start; }
@@ -228,6 +307,7 @@ details p { margin: 0; padding: 0 0 26px; color: var(--bone2); max-width: 720px;
   .scroll-hint { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .js .thesis .big .w { color: inherit; } .js .pin, .js .spec tr { opacity: 1; scale: 1; transform: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .eclipse { height: auto; } .stage { position: relative; }
   .js .fade { opacity: 1; transform: none; }

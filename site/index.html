@@ -47,10 +47,10 @@
   <section class="thesis">
     <p class="big">Most systems ask an old laptop to keep up. Grimm lets it <em>rest</em>. The desktop sleeps until you touch it, closed apps really close, and the look is spent where you see it: in motion when you act, and in stillness when you don't.</p>
     <dl class="figures">
-      <div><dt>~1%</dt><dd>CPU with the desktop idle, measured</dd></div>
-      <div><dt>230 MB</dt><dd>for the whole desktop shell</dd></div>
-      <div><dt>4 GB</dt><dd>of RAM is plenty</dd></div>
-      <div><dt>0</dt><dd>ads, accounts or tracking</dd></div>
+      <div><dt data-count="1" data-pre="~" data-post="%">~1%</dt><dd>CPU with the desktop idle, measured</dd></div>
+      <div><dt data-count="230" data-post=" MB">230 MB</dt><dd>for the whole desktop shell</dd></div>
+      <div><dt data-count="4" data-post=" GB">4 GB</dt><dd>of RAM is plenty</dd></div>
+      <div><dt data-count="0" data-from="99">0</dt><dd>ads, accounts or tracking</dd></div>
     </dl>
   </section>
 
@@ -83,6 +83,10 @@
       <h2>The launcher is a command bar</h2>
       <p>Press Super+Space and type. Open an app, jump to a setting, work out <code>2400*1.5%</code>, run <code>&gt; a command</code>, or search the web with <code>? a question</code>.</p>
     </header>
+    <div class="cmdbar" aria-hidden="true">
+      <div class="cb-in"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><span id="cbText"></span><i class="caret"></i></div>
+      <div class="cb-out"><span class="cb-kind" id="cbKind"></span><span id="cbOut"></span><kbd>Enter</kbd></div>
+    </div>
     <figure class="plate bleed"><img src="img/dark-launcher.webp" width="1600" height="900" loading="lazy" alt="The Grimm launcher with a search field, categories and an app grid"></figure>
   </section>
 
@@ -118,10 +122,17 @@
       <h2>The living island</h2>
       <p>The clock in the middle grows to hold what matters right now, then springs back. What's playing, from YouTube to Spotify to a film, with its cover, title and controls. A turn of the volume or the brightness. The moment you plug in. It listens for these as they happen, so it costs nothing while nothing changes.</p>
     </header>
-    <div class="island-demo">
-      <figure><img src="img/island-playing.webp" width="364" height="46" loading="lazy" alt="The island showing a track playing: the clock, the player's icon, the title and artist, and a pause button"><figcaption>Something is playing</figcaption></figure>
-      <figure><img src="img/island-hover.webp" width="436" height="46" loading="lazy" alt="The island under the mouse, with previous and next buttons beside pause"><figcaption>Under the mouse: previous and next</figcaption></figure>
-      <figure><img src="img/island-volume.webp" width="276" height="46" loading="lazy" alt="The island showing the volume at 64 percent"><figcaption>A volume key: the island becomes the bar</figcaption></figure>
+    <div class="live" aria-label="A working copy of the island, cycling through what it shows">
+      <div class="li s-clock" id="li">
+        <span class="li-clock"><b id="liTime">16:01</b><span id="liDate">Fri, 20 Nov</span></span>
+        <span class="li-media"><i class="li-sep"></i><span class="li-art"></span><span class="li-eq"><i></i><i></i><i></i></span><span class="li-text"><b>Second Light</b><span>Aurora Choir</span></span>
+          <span class="li-btn li-side"><svg viewBox="0 0 24 24"><path d="M18 5.5v13l-9-6.5zM6 5v14"/></svg></span>
+          <span class="li-btn li-play"><svg viewBox="0 0 24 24"><path class="pz" d="M8 5v14M16 5v14"/><path class="pl" d="M8 5.5v13l10.5-6.5z"/></svg></span>
+          <span class="li-btn li-side"><svg viewBox="0 0 24 24"><path d="M6 5.5v13l9-6.5zM18 5v14"/></svg></span></span>
+        <span class="li-osd"><svg class="li-ic" viewBox="0 0 24 24"><path class="vol" d="M4 9.5h3.5L12 5.5v13l-4.5-4H4zM15.5 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/><path class="bolt" d="M13 3 6 13.5h5L10 21l8-11h-5z"/></svg><span class="li-bar"><i id="liBar"></i></span><b id="liPct">64%</b></span>
+      </div>
+      <ol class="li-steps"><li data-s="clock">The clock</li><li data-s="media">Something plays</li><li data-s="hover">Under the mouse</li><li data-s="vol">A volume key</li><li data-s="charge">Plugged in</li></ol>
+      <p class="li-note">A working copy of the real island, running in your browser.</p>
     </div>
   </section>
 
