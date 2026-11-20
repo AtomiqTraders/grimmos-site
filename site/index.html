@@ -23,7 +23,7 @@
     Grimm OS
   </a>
   <nav aria-label="Sections">
-    <a href="#desktop">Desktop</a><a href="#rune">Rune</a><a href="#spec">Under the hood</a><a href="#install">Install</a><a class="dl" href="#download">Download</a>
+    <a href="#desktop">Desktop</a><a href="#island">Island</a><a href="#rune">Rune</a><a href="#spec">Under the hood</a><a href="#install">Install</a><a class="dl" href="#download">Download</a>
   </nav>
 </header>
 
@@ -34,7 +34,7 @@
       <img class="sky" src="img/eclipse.webp" width="1800" height="1200" alt="" fetchpriority="high">
       <div class="reveal-shot"><img src="img/dark-desktop.webp" width="1600" height="900" alt="The Grimm OS desktop: three floating islands for apps, the clock and status over an aurora photo, and a widget with the time and CPU, RAM and disk use"></div>
       <div class="intro">
-        <p class="meta"><span class="flare-dot"></span>Version 0.8 · Debian 13 · Linux 6.12 · Free software</p>
+        <p class="meta"><span class="flare-dot"></span>Version 0.9 · Debian 13 · Linux 6.12 · Free software</p>
         <h1>A new light<br>for <em>old laptops.</em></h1>
         <p class="lede">Grimm OS is a free operating system for the laptop you already own. Its desktop, launcher and terminal were made from scratch, it idles at about one percent of a CPU, and nothing runs that you didn't ask for.</p>
         <p class="cta"><a class="btn" href="#download">Download</a><a class="link" href="#desktop">See it work <span aria-hidden="true">↓</span></a></p>
@@ -112,9 +112,22 @@
     <figure class="plate bleed"><img src="img/dark-dash.webp" width="1600" height="900" loading="lazy" alt="The Grimm dashboard with quick-settings tiles, a brightness slider, notifications and a calendar"></figure>
   </section>
 
-  <section id="rune" class="chapter rune">
+  <section id="island" class="chapter">
     <header class="ch-head">
       <span class="num">V</span>
+      <h2>The living island</h2>
+      <p>The clock in the middle grows to hold what matters right now, then springs back. What's playing, from YouTube to Spotify to a film, with its cover, title and controls. A turn of the volume or the brightness. The moment you plug in. It listens for these as they happen, so it costs nothing while nothing changes.</p>
+    </header>
+    <div class="island-demo">
+      <figure><img src="img/island-playing.webp" width="364" height="46" loading="lazy" alt="The island showing a track playing: the clock, the player's icon, the title and artist, and a pause button"><figcaption>Something is playing</figcaption></figure>
+      <figure><img src="img/island-hover.webp" width="436" height="46" loading="lazy" alt="The island under the mouse, with previous and next buttons beside pause"><figcaption>Under the mouse: previous and next</figcaption></figure>
+      <figure><img src="img/island-volume.webp" width="276" height="46" loading="lazy" alt="The island showing the volume at 64 percent"><figcaption>A volume key: the island becomes the bar</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="rune" class="chapter rune">
+    <header class="ch-head">
+      <span class="num">VI</span>
       <h2>Rune, the terminal</h2>
       <p>Grimm's own terminal. Each tab shows its folder and git branch, a dot while a command runs and a tick or a cross when it finishes in the background. Split panes, search, and Super+` drops one down from the top. Commands you use often can be saved, even for a set number of runs.</p>
     </header>
@@ -139,7 +152,7 @@
   <!-- the spec sheet -->
   <section id="spec" class="spec">
     <header class="ch-head">
-      <span class="num">VI</span>
+      <span class="num">VII</span>
       <h2>Under the hood</h2>
       <p>Grimm stands on Debian, one of the oldest and steadiest Linux systems, so <code>apt</code> and its tens of thousands of packages just work. Everything you see on top is Grimm's.</p>
     </header>
@@ -162,7 +175,7 @@
   <!-- made in the open -->
   <section class="log">
     <header class="ch-head">
-      <span class="num">VII</span>
+      <span class="num">VIII</span>
       <h2>Made in the open</h2>
       <p>Every version, built, booted and tested on a 2016 laptop with 4 GB of memory.</p>
     </header>
@@ -173,13 +186,14 @@
       <li><b>0.5</b><span>First boot on real hardware.</span></li>
       <li><b>0.7</b><span>“Corona”: one colour from your wallpaper styles everything; spring motion; installed for real.</span></li>
       <li><b>0.8</b><span>Rune, Grimm's own terminal, saved commands, and apps that quit when you close them.</span></li>
+      <li><b>0.9</b><span>The living island: what's playing, volume, brightness and charging, right in the clock.</span></li>
     </ol>
   </section>
 
   <!-- install -->
   <section id="install" class="install">
     <header class="ch-head">
-      <span class="num">VIII</span>
+      <span class="num">IX</span>
       <h2>Install it</h2>
       <p>About twenty minutes from download to desktop. You can try everything from the USB stick first without touching your disk.</p>
     </header>
@@ -193,7 +207,7 @@
   </section>
 
   <section class="faq">
-    <header class="ch-head"><span class="num">IX</span><h2>Questions</h2></header>
+    <header class="ch-head"><span class="num">X</span><h2>Questions</h2></header>
     <div class="qs">
       <details><summary>Is it free?</summary><p>Yes. It costs nothing, and its source code is open under the GNU GPL, version 3 or later. No ads, no accounts, no tracking.</p></details>
       <details><summary>Is it Linux?</summary><p>Yes: the Linux kernel and Debian 13 underneath, so anything packaged for Debian installs with <code>apt</code>. Everything on top, from the boot splash to the terminal, is Grimm.</p></details>
@@ -206,9 +220,9 @@
   <section id="download" class="download">
     <img class="sky-small" src="img/eclipse.webp" width="1800" height="1200" alt="" loading="lazy">
     <div class="ticket">
-      <h2>Grimm OS <em>0.8</em></h2>
+      <h2>Grimm OS <em>0.9</em></h2>
       <dl>
-        <div><dt>Image</dt><dd>grimm-os-0.8-amd64.iso</dd></div>
+        <div><dt>Image</dt><dd>grimm-os-0.9-amd64.iso</dd></div>
         <div><dt>Size</dt><dd>~1.6 GB</dd></div>
         <div><dt>Base</dt><dd>Debian 13 · Linux 6.12</dd></div>
         <div><dt>SHA-256</dt><dd>published with the image</dd></div>

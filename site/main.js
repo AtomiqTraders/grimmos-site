@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------- reveal things as they arrive (each once)
-  const targets = document.querySelectorAll('.thesis .big, .figures, .ch-head, .plate, .term, .spec table, .versions, .steps, .reqs, .qs, .ticket, .sky-small');
+  const targets = document.querySelectorAll('.thesis .big, .figures, .ch-head, .plate, .island-demo figure, .term, .spec table, .versions, .steps, .reqs, .qs, .ticket, .sky-small');
   const seen = new IntersectionObserver((entries) => {
     for (const e of entries) {
       if (!e.isIntersecting) continue;

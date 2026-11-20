@@ -107,6 +107,15 @@ section:not(.eclipse) { padding: clamp(90px, 14vh, 170px) var(--gut) 0; max-widt
 .compare .tag { position: absolute; bottom: 16px; font: 400 12px var(--mono); padding: 6px 10px; background: rgba(10,10,11,.75); color: var(--bone); pointer-events: none; }
 .compare .tag.l { left: 16px; } .compare .tag.r { right: 16px; background: rgba(236,230,218,.85); color: var(--ink); }
 
+/* the living island: the three states, each on its own strip of night */
+.island-demo { display: grid; gap: 14px; max-width: 760px; }
+.island-demo figure { margin: 0; display: grid; grid-template-columns: minmax(0, 470px) minmax(0, 1fr); align-items: center; gap: 26px;
+  padding: 18px 22px; background: #020306; border: 1px solid var(--line); border-radius: 8px; }
+.island-demo img { width: auto; max-width: 100%; border-radius: 999px; }
+.island-demo figcaption { color: var(--ash); font-size: 15px; }
+.island-demo figcaption::before { content: "— "; color: var(--flare); }
+@media (max-width: 760px) { .island-demo figure { grid-template-columns: 1fr; gap: 12px; } }
+
 /* Rune */
 .rune { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 60px; align-items: start; }
 .rune .ch-head { margin-bottom: 0; }
