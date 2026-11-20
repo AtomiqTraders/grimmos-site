@@ -1,6 +1,14 @@
 /* Grimm OS website. The palette is the 2017 eclipse: ink black, the bone-white corona, and the small red
    prominence on the moon's edge, used once or twice and never as a gradient. Type: Instrument Serif for the
    voice, Inter Tight for reading, JetBrains Mono for facts. */
+/* Fonts are served from this site (SIL Open Font License, see fonts/OFL.txt): no third-party requests. */
+@font-face { font-family: "Instrument Serif"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/instrument-serif-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/instrument-serif-400-italic.woff2) format("woff2"); }
+@font-face { font-family: "Inter Tight"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/inter-tight-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Inter Tight"; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/inter-tight-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "Inter Tight"; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/inter-tight-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/jetbrains-mono-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/jetbrains-mono-500-normal.woff2) format("woff2"); }
 :root {
   --ink: #0a0a0b; --ink2: #111113; --ink3: #18181b;
   --bone: #ece6da; --bone2: #c9c2b4; --ash: #8a847a; --smoke: #57534c;
