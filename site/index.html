@@ -23,7 +23,7 @@
     Grimm OS
   </a>
   <nav aria-label="Sections">
-    <a href="#desktop">Desktop</a><a href="#island">Island</a><a href="#rune">Rune</a><a href="#spec">Under the hood</a><a href="#install">Install</a><a class="dl" href="#download">Download</a>
+    <a href="#desktop">Desktop</a><a href="#island">Island</a><a href="#harbor">Harbor</a><a href="#rune">Rune</a><a href="#spec">Under the hood</a><a href="#install">Install</a><a class="dl" href="#download">Download</a>
   </nav>
 </header>
 
@@ -136,9 +136,30 @@
     </div>
   </section>
 
-  <section id="rune" class="chapter rune">
+  <section id="harbor" class="chapter flip">
     <header class="ch-head">
       <span class="num">VI</span>
+      <h2>Two layouts, one system</h2>
+      <p>Rather have a menu bar and a dock? Harbor is a second layout: a slim bar along the top, a glass dock at the bottom whose icons swell under your pointer, and windows that open from it and minimise back into it. Switch in Settings, no logging out. Drag across to see both.</p>
+    </header>
+    <figure class="plate">
+      <div class="compare" style="--cut:50%">
+        <img src="img/harbor-dock.webp" width="1600" height="900" loading="lazy" alt="The Harbor layout: a menu bar at the top and a dock at the bottom, with the icon under the pointer magnified">
+        <div class="over"><img src="img/dark-desktop.webp" width="1600" height="900" loading="lazy" alt="The Grimm layout: three floating islands and the widget"></div>
+        <span class="handle" aria-hidden="true"></span>
+        <input type="range" min="0" max="100" value="50" aria-label="Show more of the Grimm layout or the Harbor layout">
+        <span class="tag l">Grimm · islands</span><span class="tag r">Harbor · bar and dock</span>
+      </div>
+    </figure>
+    <figure class="plate bleed">
+      <img src="img/harbor-cc.webp" width="1600" height="900" loading="lazy" alt="Harbor's Control Centre: cards for Wi-Fi, Bluetooth, night light, Do Not Disturb, power mode, display and sound">
+      <figcaption>Harbor's Control Centre is a set of cards. Their edges light up as your pointer comes near, and the sliders stretch like rubber when you pull past the end. Harbor arrives in 0.9.7; it is in testing now.</figcaption>
+    </figure>
+  </section>
+
+  <section id="rune" class="chapter rune">
+    <header class="ch-head">
+      <span class="num">VII</span>
       <h2>Rune, the terminal</h2>
       <p>Grimm's own terminal. Each tab shows its folder and git branch, a dot while a command runs and a tick or a cross when it finishes in the background. Split panes, search, and Super+` drops one down from the top. Commands you use often can be saved, even for a set number of runs.</p>
     </header>
@@ -163,7 +184,7 @@
   <!-- the spec sheet -->
   <section id="spec" class="spec">
     <header class="ch-head">
-      <span class="num">VII</span>
+      <span class="num">VIII</span>
       <h2>Under the hood</h2>
       <p>Grimm stands on Debian, one of the oldest and steadiest Linux systems, so <code>apt</code> and its tens of thousands of packages just work. Everything you see on top is Grimm's.</p>
     </header>
@@ -186,7 +207,7 @@
   <!-- made in the open -->
   <section class="log">
     <header class="ch-head">
-      <span class="num">VIII</span>
+      <span class="num">IX</span>
       <h2>Made in the open</h2>
       <p>Every version, built, booted and tested on a 2016 laptop with 4 GB of memory.</p>
     </header>
@@ -198,13 +219,14 @@
       <li><b>0.7</b><span>“Corona”: one colour from your wallpaper styles everything; spring motion; installed for real.</span></li>
       <li><b>0.8</b><span>Rune, Grimm's own terminal, saved commands, and apps that quit when you close them.</span></li>
       <li><b>0.9</b><span>The living island: what's playing, volume, brightness and charging, right in the clock.</span></li>
+      <li><b>0.9.7</b><span>Harbor, a second layout: a menu bar, a magnifying dock and its own Control Centre. In testing.</span></li>
     </ol>
   </section>
 
   <!-- install -->
   <section id="install" class="install">
     <header class="ch-head">
-      <span class="num">IX</span>
+      <span class="num">X</span>
       <h2>Install it</h2>
       <p>About twenty minutes from download to desktop. You can try everything from the USB stick first without touching your disk.</p>
     </header>
@@ -218,7 +240,7 @@
   </section>
 
   <section class="faq">
-    <header class="ch-head"><span class="num">X</span><h2>Questions</h2></header>
+    <header class="ch-head"><span class="num">XI</span><h2>Questions</h2></header>
     <div class="qs">
       <details><summary>Is it free?</summary><p>Yes. It costs nothing, and its source code is open under the GNU GPL, version 3 or later. No ads, no accounts, no tracking.</p></details>
       <details><summary>Is it Linux?</summary><p>Yes: the Linux kernel and Debian 13 underneath, so anything packaged for Debian installs with <code>apt</code>. Everything on top, from the boot splash to the terminal, is Grimm.</p></details>

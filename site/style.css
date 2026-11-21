@@ -89,6 +89,9 @@ section:not(.eclipse) { padding: clamp(90px, 14vh, 170px) var(--gut) 0; max-widt
 .plate { margin: 0; }
 .plate img { border-radius: 8px; box-shadow: 0 0 0 1px var(--line), 0 30px 90px rgba(0,0,0,.6); }
 .plate.bleed { margin-right: calc(var(--gut) * -1 - max(0px, (100vw - 1400px) / 2)); }
+.plate + .plate { margin-top: clamp(28px, 5vw, 64px); }
+.plate > figcaption { max-width: 62ch; margin-top: 18px; font-size: 15px; line-height: 1.6; color: var(--bone2); }
+.flip .plate.bleed > figcaption { margin-left: auto; }
 .plate.bleed img { border-radius: 8px 0 0 8px; }
 .flip .plate.bleed { margin-right: 0; margin-left: calc(var(--gut) * -1 - max(0px, (100vw - 1400px) / 2)); }
 .flip .plate.bleed img { border-radius: 0 8px 8px 0; }
